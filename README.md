@@ -28,7 +28,7 @@ Scores content across **8 dimensions** on a 0–10 scale, produces a weighted ov
 ## Installation
 
 ```bash
-npx skills add jigeshshah/content-eval -g
+npx skills add ryvrimmersve/content-eval -g
 ```
 
 Or install from the [Skills registry](https://skills.sh):
