@@ -150,5 +150,5 @@ npx skills eval content-eval
 
 ## Author
 
-Built by [Jigesh Shah](https://github.com/jigeshshah).
+Built by [RYVR Immersive](https://github.com/ryvrimmersive).
 Feedback and PRs welcome.
