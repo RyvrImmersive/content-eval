@@ -1,0 +1,140 @@
+{
+  "skill_name": "content-eval",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Can you evaluate this blog post for me? I want to know how good it is and what I should fix before we publish it.\n\n---\n\n**5 Ways AI is Changing Business**\n\nArtificial intelligence is changing business in many ways. Companies are using AI to improve their operations and become more efficient. This is leading to significant changes across many industries.\n\nFirst, AI helps companies automate tasks. Many repetitive tasks that used to be done by humans can now be done by AI. This saves time and money for businesses.\n\nSecond, AI improves customer service. Companies are using chatbots to answer customer questions 24/7. This means customers can get help whenever they need it.\n\nThird, AI helps with data analysis. Businesses generate a lot of data and AI can help analyze it quickly. This helps companies make better decisions.\n\nFourth, AI is transforming marketing. Marketers are using AI to personalize their campaigns and reach the right customers. Studies show that personalization increases engagement significantly.\n\nFifth, AI is improving supply chain management. Companies are using AI to optimize their supply chains and reduce costs.\n\nIn conclusion, AI is having a major impact on business. Companies that adopt AI early will have a competitive advantage. If you want to learn more about how AI can help your business, contact us today.\n\n---",
+      "expected_output": "A full scorecard with all 8 dimensions scored, an overall score (likely in the 35-55 range for this weak content), evidence-backed analysis calling out vague claims and generic structure, and prioritised recommendations. Should include at least one direct quote as evidence of weakness.",
+      "assertions": [
+        {
+          "name": "scorecard_table_present",
+          "description": "Output contains a markdown scorecard table with all 8 scoring dimensions",
+          "type": "contains_all",
+          "values": ["Clarity", "Credibility", "Originality", "Structure", "Audience Alignment", "Executive Value", "Evidence Quality", "CTA Effectiveness"]
+        },
+        {
+          "name": "overall_score_present",
+          "description": "Output contains an OVERALL score out of 100",
+          "type": "regex",
+          "pattern": "OVERALL.*?\\d{2}\\s*/\\s*100"
+        },
+        {
+          "name": "grade_present",
+          "description": "Output contains a letter grade (A/B/C/D/F)",
+          "type": "regex",
+          "pattern": "Grade.*?[ABCDF]"
+        },
+        {
+          "name": "quote_as_evidence",
+          "description": "Output quotes at least one passage from the content in quotation marks as evidence",
+          "type": "regex",
+          "pattern": "\"[^\"]{20,}\""
+        },
+        {
+          "name": "recommendations_present",
+          "description": "Output contains numbered or ranked recommendations",
+          "type": "regex",
+          "pattern": "#[1-9]|\\*\\*#[1-9]|\\*\\*[1-9]\\."
+        },
+        {
+          "name": "low_score_for_weak_content",
+          "description": "Overall score should be below 65 for this generic, evidence-free content",
+          "type": "regex",
+          "pattern": "OVERALL.*?([1-5][0-9]|6[0-4])\\s*/\\s*100"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Hey, can you score this case study we wrote for a fintech client? We're thinking of gating it on our website but want to make sure it's strong enough first.\n\n---\n\n**How Meridian Bank Reduced Loan Processing Time by 67% in 4 Months**\n*A case study by Cascade Financial Technology*\n\n**The Challenge**\n\nMeridian Bank, a $4.2B regional bank with 38 branches across the Southeast, was losing commercial loan business to digital-first competitors. Their average loan approval time was 22 business days — nearly three times the industry median of 8 days according to the 2023 Aite-Novarica Commercial Lending Benchmark Report. Loan officers spent 40% of their time on manual data collection and compliance checks that contributed little to credit judgment.\n\n\"We were watching deals walk out the door,\" said David Rios, SVP of Commercial Banking at Meridian. \"A mid-market CFO doesn't have three weeks to wait for a credit decision.\"\n\n**The Approach**\n\nCascade deployed its LoanFlow platform in October 2023, integrating with Meridian's existing Fiserv core banking system without a rip-and-replace. The implementation focused on three workflows: (1) automated document ingestion and extraction using fine-tuned OCR models trained on 850,000 commercial loan documents, (2) real-time bureau and UCC lien pulls replacing a manual process that took 2–3 days, and (3) a compliance pre-check engine mapped to Meridian's own credit policy.\n\nCritically, the rollout was phased: 5 pilot loan officers in Month 1, expanded to 23 in Month 2, full deployment in Month 3. Change management included weekly office hours and a Slack channel staffed by Cascade engineers.\n\n**The Results (Months 1–4 post-launch)**\n\n| Metric | Before | After | Change |\n|--------|--------|-------|--------|\n| Average approval time | 22 days | 7.3 days | -67% |\n| Loan officer admin time | 40% | 14% | -65% |\n| Applications processed/month | 180 | 310 | +72% |\n| Loan officer satisfaction (NPS) | 31 | 67 | +36 pts |\n\nMeridian originated $43M in commercial loans in Q4 2023 — a 28% increase over the same quarter in 2022, which the bank's CFO attributed in part to the faster turnaround.\n\n**What Made the Difference**\n\nRios credits the phased rollout: \"Every implementation I've seen fail has tried to do everything at once. The pilot gave our people time to build trust in the system before it became mandatory.\"\n\nCascade's integration approach also avoided the 9–14 month delays typical of core banking replacements. The Fiserv connector reduced deployment time from an estimated 14 months (full replacement) to 4 months.\n\n**Next Steps**\n\nMeridian is now piloting Cascade's credit memo auto-drafting module, with a target of reducing credit memo preparation time from 3 hours to under 30 minutes.\n\n*Want to see what LoanFlow could do for your institution? Book a 30-minute demo with our commercial lending team: [cascade.io/demo]*\n\n---",
+      "expected_output": "A full scorecard with high scores (likely B+ to A range overall, 75-90/100) reflecting strong evidence, specific metrics, named customer and quotes, clear structure. Analysis should recognise the data table, customer quotes, and specific methodology as strengths. Recommendations should focus on remaining gaps (e.g., no competitive context, limited author credibility signals, CTA could be stronger).",
+      "assertions": [
+        {
+          "name": "scorecard_table_present",
+          "description": "Output contains a markdown scorecard table with all 8 scoring dimensions",
+          "type": "contains_all",
+          "values": ["Clarity", "Credibility", "Originality", "Structure", "Audience Alignment", "Executive Value", "Evidence Quality", "CTA Effectiveness"]
+        },
+        {
+          "name": "overall_score_present",
+          "description": "Output contains an OVERALL score out of 100",
+          "type": "regex",
+          "pattern": "OVERALL.*?\\d{2}\\s*/\\s*100"
+        },
+        {
+          "name": "high_score_for_strong_content",
+          "description": "Strong case study with data, quotes, and named sources should score 70+",
+          "type": "regex",
+          "pattern": "OVERALL.*?(7[0-9]|8[0-9]|9[0-9])\\s*/\\s*100"
+        },
+        {
+          "name": "content_type_identified_as_case_study",
+          "description": "Report correctly identifies content type as a case study",
+          "type": "contains",
+          "value": "Case Study"
+        },
+        {
+          "name": "evidence_quality_strength_noted",
+          "description": "Analysis acknowledges the data table, specific metrics, or customer quotes as a strength",
+          "type": "regex",
+          "pattern": "metric|data table|67%|Rios|quote|specific"
+        },
+        {
+          "name": "quote_as_evidence",
+          "description": "Output quotes at least one passage from the content",
+          "type": "regex",
+          "pattern": "\"[^\"]{20,}\""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I wrote this thought leadership article for our CEO to publish on LinkedIn. Can you give it a proper quality score and tell me what needs to improve? Be honest — if it's not good enough I need to know before we publish it.\n\n---\n\n**The Hidden Cost of Playing It Safe: Why B2B Brands Are Losing the Trust War**\n\nBy Sarah Chen, CEO, Vertex Growth Partners\n\nLast quarter, I sat in on twelve buyer interviews for a client in the enterprise software space. The same phrase came up in eight of them, almost verbatim: \"Their content all sounds the same.\"\n\nNot bad. Not wrong. Just... indistinguishable.\n\nThis is the quiet crisis in B2B thought leadership. We've optimised so hard for inoffensiveness — for \"providing value\" in the most frictionless, stakeholder-approved, legal-reviewed way — that we've hollowed out the thing that makes content trustworthy in the first place: a human being actually taking a position.\n\n**The data is more alarming than most brands realise**\n\nThe 2024 Edelman-LinkedIn B2B Thought Leadership Impact Report surveyed 3,500 C-suite executives and found that 71% of buyers say thought leadership content has become less distinctive over the past two years. More telling: only 14% of C-suite respondents said they'd share a piece of vendor content with a colleague. Fourteen percent.\n\nAt the same time, 89% of those same executives said that high-quality thought leadership positively influences their perception of a company — and 58% said it directly influenced an RFP shortlist decision.\n\nThe gap between what buyers want (distinctive, opinionated, credible) and what brands produce (safe, generic, unchallengeable) is growing. And it's measurable in pipeline.\n\n**Why brands keep playing it safe (and why it backfires)**\n\nThis isn't a creativity problem. I've worked with brand teams full of genuinely smart people who want to say interesting things. The constraint is organisational, not intellectual.\n\nThe approval chain kills the point of view. By the time an article has been through legal, compliance, the CEO's EA, and two rounds of \"can we soften this?\", the original argument has been lawyered into mush. The author's name is on it but nobody's voice is in it.\n\nHere's what the data tells us that most brands ignore: buyers don't penalise brands for being wrong. They penalise them for being boring. In the same Edelman report, only 9% of C-suite executives said they'd lost respect for a company because of a piece of thought leadership they disagreed with. But 62% said they'd stopped reading a brand's content entirely because it added nothing new to their thinking.\n\n**What actually builds trust**\n\nI'm not arguing for provocation for its own sake. I'm arguing for specificity and commitment to a point of view.\n\nThe brands winning the trust game share three characteristics:\n\n1. **They name the problem precisely.** Not \"digital transformation is challenging\" but \"63% of digital transformation projects fail in year two because they run out of executive sponsor attention, not budget.\"\n\n2. **They're willing to disagree with the consensus.** The best piece of content one of my clients published this year opened with: \"Everyone in our industry is wrong about where the AI ROI actually comes from.\" They backed it up with 18 months of client data. It drove more qualified pipeline than their last four whitepapers combined.\n\n3. **They put a real human face on it.** Not stock-photo diverse team. An actual named expert, with actual named experience, making an actual argument.\n\n**What I'd do differently**\n\nIf you run a B2B content programme and you're reading this, here's the one test I'd apply to every piece before publication: *Would a competitor be annoyed that you published this?*\n\nIf the answer is no — if the piece is so balanced and inoffensive that your biggest competitor would be happy to repost it on their own blog — kill it or start over.\n\nThe content that builds trust is the content that takes a swing. Not all of them will land. But readers remember the ones that do. And those readers end up in your pipeline.\n\n---\n*Sarah Chen is CEO of Vertex Growth Partners, a B2B growth consultancy. She has led go-to-market strategy for over 40 B2B software companies. Follow her on LinkedIn.*",
+      "expected_output": "A full scorecard reflecting strong originality, credibility, and audience alignment — likely scoring 75-88 overall. The analysis should recognise the Edelman data, the specific '14%' statistic, the contrarian POV, and the named author credentials as strengths. Should flag areas for improvement such as the transition between sections or the CTA being absent/weak. Recommendations should be specific and reference actual passages.",
+      "assertions": [
+        {
+          "name": "scorecard_table_present",
+          "description": "Output contains scorecard with all 8 dimensions",
+          "type": "contains_all",
+          "values": ["Clarity", "Credibility", "Originality", "Structure", "Audience Alignment", "Executive Value", "Evidence Quality", "CTA Effectiveness"]
+        },
+        {
+          "name": "overall_score_present",
+          "description": "Output contains an OVERALL score out of 100",
+          "type": "regex",
+          "pattern": "OVERALL.*?\\d{2}\\s*/\\s*100"
+        },
+        {
+          "name": "op_ed_or_article_content_type",
+          "description": "Correctly identifies this as an article, op-ed, or thought leadership piece (not a blog post or case study)",
+          "type": "regex",
+          "pattern": "Op-Ed|Article|Thought Leadership|LinkedIn article"
+        },
+        {
+          "name": "originality_recognised",
+          "description": "Analysis recognises the contrarian angle or distinctive POV as a strength",
+          "type": "regex",
+          "pattern": "original|contrarian|distinctive|point of view|POV|fresh"
+        },
+        {
+          "name": "specific_stat_cited_in_analysis",
+          "description": "Analysis references at least one specific statistic from the article (14%, 71%, 89%, 58%)",
+          "type": "regex",
+          "pattern": "14%|71%|89%|58%|62%|9%"
+        },
+        {
+          "name": "quote_as_evidence",
+          "description": "Output quotes at least one passage from the content",
+          "type": "regex",
+          "pattern": "\"[^\"]{20,}\""
+        },
+        {
+          "name": "recommendations_present",
+          "description": "Output contains numbered recommendations",
+          "type": "regex",
+          "pattern": "#[1-9]|\\*\\*#[1-9]|\\*\\*[1-9]\\."
+        }
+      ]
+    }
+  ]
+}
