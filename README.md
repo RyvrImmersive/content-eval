@@ -1,5 +1,7 @@
 # content-eval — Thought Leadership Quality Scorer
 
+[![skills.sh](https://skills.sh/b/RyvrImmersive/content-eval)](https://skills.sh/RyvrImmersive/content-eval)
+
 A [Claude Code skill](https://skills.sh) that evaluates thought leadership content and returns a structured quality report: a weighted scorecard, evidence-backed dimension analysis, and a prioritised improvement plan.
 
 Works on **whitepapers, case studies, blog posts, articles, op-eds, and long-form reports**.
